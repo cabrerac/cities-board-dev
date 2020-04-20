@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated cdb -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="cdb.presentation.CdbModelWizardID"
+            name="%_UI_CdbModelWizard_label"
+            class="cdb.presentation.CdbModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CdbModelFile.gif">
+         <description>%_UI_CdbModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated cdb -->
+      <editor
+            id="cdb.presentation.CdbEditorID"
+            name="%_UI_CdbEditor_label"
+            icon="icons/full/obj16/CdbModelFile.gif"
+            extensions="cdb"
+            class="cdb.presentation.CdbEditor"
+            contributorClass="cdb.presentation.CdbActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

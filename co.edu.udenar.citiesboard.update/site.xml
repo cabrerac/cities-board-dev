@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/co.edu.udenar.citiesboard.feature_1.0.0.202004202012.jar" id="co.edu.udenar.citiesboard.feature" version="1.0.0.202004202012">
+      <category name="Cities-Board"/>
+   </feature>
+   <category-def name="Cities-Board" label="Cities-Board">
+      <description>
+         The Cities-Board&apos;s project enables the modelling and automatic generation of smart cities dashboards.
+      </description>
+   </category-def>
+</site>
