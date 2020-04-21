@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/co.edu.udenar.citiesboard.cdb/src-gen" creationIcons="false"
+    editDirectory="/co.edu.udenar.citiesboard.cdb.edit/src-gen" editorDirectory="/co.edu.udenar.citiesboard.cdb.editor/src-gen"
+    modelPluginID="co.edu.udenar.citiesboard.cdb" modelName="Cdb" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>../../co.edu.udenar.citiesboard.chain/Metamodels/cdb.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Cdb" disposableProviderFactory="true" ecorePackage="cdb.ecore#/">
+    <genClasses ecoreClass="cdb.ecore#//Dashboard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Dashboard/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Dashboard/picture"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Dashboard/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Dashboard/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Dashboard/pagelink"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdb.ecore#//Dashboard/visualisator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdb.ecore#//Dashboard/datasource"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Visualisator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdb.ecore#//Visualisator/presents"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Visualisator/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdb.ecore#//Visualisator/position"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//DataSource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//DataSource/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//DataSource/provider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//DataSource/state"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdb.ecore#//DataSource/presentedby"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Chart">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdb.ecore#//Chart/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdb.ecore#//Chart/data"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Facebook">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Facebook/namepage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Facebook/tittlepage"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Twitter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Twitter/accountuser"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Twitter/listname"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Youtube">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Youtube/urlList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Youtube/channelname"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//SocialMedia"/>
+    <genClasses ecoreClass="cdb.ecore#//PieChart">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//PieChart/stepSize"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//BarChart"/>
+    <genClasses ecoreClass="cdb.ecore#//DataEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//DataEntity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//DataEntity/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Streamed">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdb.ecore#//Streamed/method"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Streamed/URL_service"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cdb.ecore#//Streamed/returnparameter"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Persisted">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdb.ecore#//Persisted/dataentitty"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Method/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cdb.ecore#//Method/dataentitty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Method/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Position">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Position/top"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Position/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Position/heigth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Position/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Position/name"/>
+    </genClasses>
+    <genClasses ecoreClass="cdb.ecore#//Mapc">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Mapc/marker"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Mapc/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cdb.ecore#//Mapc/longitude"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
