@@ -11,7 +11,7 @@ Cities-Board was developed on top of the Eclipse Modelling Framework (EMF). Plea
 1. Download the latest version of the [Eclipse Installer](https://www.eclipse.org/downloads/packages/installer)
 2. Open the installer and select the Eclipse Modelling Tools package
 3. Click on Install
-4. Install ATL EMFVM Core UI Extension in your Eclipse from [the marketplace] (https://marketplace.eclipse.org/content/atlemftvm)
+4. Install ATL EMFVM Core UI Extension in your Eclipse from [the marketplace](https://marketplace.eclipse.org/content/atlemftvm)
 
 ## Projects Contents
 
