@@ -5,7 +5,6 @@
 *.o
 *.so
 *.emtl
-*.asm
 
 # Log file
 *.log
