@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="mainGenerator" name="co.edu.udenar.citiesboard.acceleo">
-    <property name="ECLIPSE_HOME" value="../../../../../eclipse/eclipse"/>
+    <property name="ECLIPSE_HOME" value="C:/Users/ELIZABETH/eclipse/modeling-2020-03/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->

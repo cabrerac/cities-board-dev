@@ -340,6 +340,9 @@ public class ModelGenerator extends AbstractAcceleoGenerator {
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
+        if (!isInWorkspace(mvc.MvcPackage.class)) {
+            resourceSet.getPackageRegistry().put(mvc.MvcPackage.eINSTANCE.getNsURI(), mvc.MvcPackage.eINSTANCE);
+        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"

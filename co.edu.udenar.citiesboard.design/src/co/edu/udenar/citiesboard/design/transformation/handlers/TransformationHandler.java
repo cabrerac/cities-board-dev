@@ -136,13 +136,15 @@ public class TransformationHandler extends AbstractHandler{
 			InputStream cdb_is = this.getClass().getClassLoader().getResourceAsStream("metamodels/cdb.ecore");
 			InputStream mvc_is = this.getClass().getClassLoader().getResourceAsStream("metamodels/mvc.ecore");
 			InputStream asm_is = this.getClass().getClassLoader().getResourceAsStream("co/edu/udenar/citiesboard/design/transformation/atl/CdbToMvc.asm");
+			
 			File cdb_file = new File(base_metamodels + "cdb.ecore");
-			byte[] buffer = new byte[cdb_is.available()];
-			cdb_is.read(buffer);
-		    OutputStream outStream = new FileOutputStream(cdb_file);
+			byte[] buffer = new byte[cdb_is.available()];			
+			cdb_is.read(buffer);		   
+			OutputStream outStream = new FileOutputStream(cdb_file);
 		    outStream.write(buffer);
 		    cdb_is.close();
 		    outStream.close();
+		    
 		    File mvc_file = new File(base_metamodels + "mvc.ecore");
 		    buffer = new byte[mvc_is.available()];
 		    mvc_is.read(buffer);
@@ -150,6 +152,7 @@ public class TransformationHandler extends AbstractHandler{
 			outStream.write(buffer);
 			mvc_is.close();
 			outStream.close();
+			
 			File asm_file = new File(base_transformations + "CdbToMvc.asm");
 		    buffer = new byte[asm_is.available()];
 		    asm_is.read(buffer);
@@ -159,6 +162,7 @@ public class TransformationHandler extends AbstractHandler{
 		    outStream.close();
 		    
 		    CodeSource src = this.getClass().getProtectionDomain().getCodeSource();
+		    int len;
 		    if (src != null) {
 		      URL jar = src.getLocation();
 		      ZipInputStream zip = new ZipInputStream(jar.openStream());
@@ -175,10 +179,12 @@ public class TransformationHandler extends AbstractHandler{
 		        	}else {
 		        		InputStream proj_is = this.getClass().getClassLoader(). getResourceAsStream(res);
 		        		File proj_file = new File(fileName);
-		    		    buffer = new byte[proj_is.available()];
-		    		    proj_is.read(buffer);
+		    		    buffer = new byte[proj_is.available()];		    		   
 		    		    outStream = new FileOutputStream(proj_file);
-		    		    outStream.write(buffer);
+		    		    while (((len = proj_is.read(buffer)))>0)
+		    		    { 
+		    		    	outStream.write(buffer,0,len);
+		    		    }
 		    		    proj_is.close();
 		    		    outStream.close();
 		        	}
@@ -269,12 +275,13 @@ public class TransformationHandler extends AbstractHandler{
 			
 	        ProjectManager project = new ProjectManager();
 	        project.inicio(base,base_structure,target_path);
+	        
 	        String[] args = new String[2];
 	        args[0]=mvc_model_path;
 	        
 	        System.out.println("Executing main acceleo transformation...");
 	        args[1]=m2t_main_gen;
-	        MainGenerator.main(args);
+	        MainGenerator.main(args);	        
 	        System.out.println("Main files generated...");
 	        
 	        System.out.println("Executing views transformations...");
@@ -304,7 +311,7 @@ public class TransformationHandler extends AbstractHandler{
 			return true;
 		}catch(Exception ex) {
 			MultiStatus status = createMultiStatus(ex.getLocalizedMessage(), ex);
-            ErrorDialog.openError(null, "Error", "The dashboard code generatiot had problems!", status);
+            ErrorDialog.openError(null, "Error", "The dashboard code generation had problems!", status);
 			return false;
 		}
 	}
